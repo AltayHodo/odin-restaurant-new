@@ -7,17 +7,23 @@ window.onload = () => {
   homePage();
 }
 
-const homeButton = document.querySelector('.home-btn');
-homeButton.addEventListener('click', () => {
-  homePage();
+const navButtons = document.querySelectorAll('nav > button');
+navButtons.forEach(button => {
+  button.addEventListener('click', (e) => {
+    updatePage(e)
+  })
 })
 
-const menuButton = document.querySelector('.menu-btn');
-menuButton.addEventListener('click', () => {
-  menuPage();
-})
+function updatePage(e){
+  const button = e.target.textContent;
+  if(button === 'Home'){
+    homePage();
+  } else if (button === 'Menu'){
+    menuPage();
+  } else{
+    aboutPage();
+  }
+}
 
-const aboutButton = document.querySelector('.about-btn');
-aboutButton.addEventListener('click', () => {
-  aboutPage();
-})
+
+
