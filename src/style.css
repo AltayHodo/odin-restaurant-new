@@ -1,7 +1,16 @@
-body{
+body {
   background-color: lightblue;
 }
 
-.menu-list{
+.menu-list {
   border: 1px solid;
+}
+
+button {
+  padding: 10px;
+}
+
+.active {
+  border: 2px solid;
+  transform: scale(1.1);
 }

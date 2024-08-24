@@ -15,14 +15,18 @@ navButtons.forEach(button => {
 })
 
 function updatePage(e){
-  const button = e.target.textContent;
-  if(button === 'Home'){
+  const buttonType = e.target.textContent;
+  if(buttonType === 'Home'){
     homePage();
-  } else if (button === 'Menu'){
+  } else if (buttonType === 'Menu'){
     menuPage();
   } else{
     aboutPage();
   }
+
+  navButtons.forEach(button => button.classList.remove('active'))
+  e.target.classList.add('active')
+
 }
 
 
